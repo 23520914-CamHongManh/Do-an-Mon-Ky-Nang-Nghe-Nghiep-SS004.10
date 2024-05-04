@@ -11,6 +11,19 @@ void gotoxy( int column, int line );
 struct Point{
     int x,y;
 };
+class QUA{
+    public:
+    struct Point A;
+    QUA()
+    {
+        A.x=rand()%(tuongphai-tuongtrai-1)+tuongtrai+1;
+      A.y=rand()%(tuongduoi-tuongtren-1)+tuongtren+1;
+    }
+    void Ve(){
+            gotoxy(A.x,A.y);
+            cout<<"#";
+        }
+};
 class CONRAN{
 public:
     struct Point A[100];
@@ -45,7 +58,9 @@ public:
 };
 void Ve_Tuong();
 bool operator==(Point A,Point B);
-bool AnQua(QUA qua,CONRAN r);
+bool KiemTraQuaTrungThan(QUA qua, CONRAN r);
+void TaoQua(QUA &qua,CONRAN r) ;
+void AnQua(QUA &qua,CONRAN &r,int &Diem);
 int main()
 {
     CONRAN r;
