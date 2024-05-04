@@ -1,11 +1,24 @@
 
-bool AnQua(QUA qua,CONRAN r)
+void AnQua(QUA &qua,CONRAN &r,int &Diem)
 {
     if(r.A[0]==qua.A)
     {
-        return true;
+        r.DoDai++;
+        Diem+=10;
+        gotoxy(tuongtrai+38,tuongtren-2);
+        cout<<Diem;
+        TaoQua(qua,r);
+        qua.Ve();
     }
-    return false;
+}
+void TaoQua(QUA &qua,CONRAN r)
+{
+    bool check =KiemTraQuaTrungThan(qua,r);
+    do{
+        qua.A.x=rand()%(tuongphai-tuongtrai-1)+tuongtrai+1;
+      qua.A.y=rand()%(tuongduoi-tuongtren-1)+tuongtren+1;
+      check =KiemTraQuaTrungThan(qua,r);
+    }while(check);
 }
 bool operator==(Point A,Point B)
 {
