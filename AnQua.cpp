@@ -26,3 +26,11 @@ bool operator==(Point A,Point B)
         return true;
     else return false;
 }
+bool KiemTraQuaTrungThan(QUA qua, CONRAN r)
+{
+    for(int i=0;i<r.DoDai;i++)
+    {
+        if(qua.A==r.A[i]) return 1;
+    }
+    return 0;
+}
