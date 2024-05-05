@@ -7,8 +7,6 @@ void Gameplay2(int mucdo)
     cout<<DIEM;
     CONRAN r;
     QUA qua;
-    int x= tuongtrai+9;
-    int y=15;
     int Huong = 0;
     char t;
     Ve_Tuong();
@@ -17,7 +15,7 @@ void Gameplay2(int mucdo)
   while (1){
         r.XoaCu();
         r.Ve();
-        if(r.Game_Over2())
+        if(Game_Over2(r))
         {
             gotoxy(tuongtrai+25,tuongduoi-10);
             cout<<"BAN DA CHET";
