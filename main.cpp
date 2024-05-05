@@ -114,24 +114,6 @@ Ve_Tuong();
 
     return 0;
 }
-typedef struct Point{
-    int x,y;
-}Point;
-class QUA{
-    public:
-    struct Point A;
-    QUA(){
-        int x=rand()%(tuongphai-tuongtrai+1)+tuongtrai;
-        int y=rand()%(tuongduoi-tuongtren+1)+tuongtren;
-        A.x=x;
-        A.y=y;
-    }
-    void Ve(){
-            gotoxy(A.x,A.y);
-            cout<<"#";
-        }
-
-};
 
 void gotoxy( int column, int line )
   {
