@@ -7,6 +7,10 @@ void Gameplay1()
   while (1){
         r.XoaCu();
         r.Ve();
+        if(r.Game_Over1())
+        {
+            break;
+        }
         if (kbhit()){
             t = getch();
             if (t=='a'&& Huong!=0) Huong = 2;
