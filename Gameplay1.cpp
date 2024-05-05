@@ -1,4 +1,4 @@
-void Gameplay2(int mucdo)
+void Gameplay1(int mucdo)
 {
     int DIEM=0;
     gotoxy(tuongtrai+24,tuongtren-2);
@@ -15,7 +15,7 @@ void Gameplay2(int mucdo)
   while (1){
         r.XoaCu();
         r.Ve();
-        if(Game_Over2(r))
+        if(Game_Over1(r))
         {
             gotoxy(tuongtrai+25,tuongduoi-10);
             cout<<"BAN DA CHET";
@@ -30,7 +30,6 @@ void Gameplay2(int mucdo)
         }
         AnQua(qua,r,DIEM);
         r.DiChuyen(Huong);
-        RanXuyenTuong(r);
         Sleep(mucdo);
     }
 }
