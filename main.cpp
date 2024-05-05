@@ -69,50 +69,81 @@ public:
         gotoxy(A[DoDai].x,A[DoDai].y);
         cout<<" ";
     }
-
-    bool Game_Over2()
-    {
-    for( int i=1; i < DoDai ; i++)
-    {
-        if(( A[0].x== A[i].x)&& (A[0].y == A[i].y))
-            return true;
-    }
-    return false;
-
-    }
-    bool Game_Over1()
-    {   if(A[0].x==tuongtrai ||A[0].x== tuongphai ||A[0].y==tuongtren ||A[0].y==tuongduoi)
-        {return true;}
-
-     return false;
-    }
 };
 void Ve_Tuong();
 bool operator==(Point A,Point B);
 bool KiemTraQuaTrungThan(QUA qua, CONRAN r);
 void TaoQua(QUA &qua,CONRAN r) ;
 void AnQua(QUA &qua,CONRAN &r,int &Diem);
+void RanXuyenTuong(CONRAN &r);
 int main()
 {
-    CONRAN r;
-    int Huong = 0;
-    char t;
-Ve_Tuong();
-    while (1){
-        if (kbhit()){
-            t = getch();
-            if (t=='a') Huong = 2;
-            if (t=='w') Huong = 3;
-            if (t=='d') Huong = 0;
-            if (t=='s') Huong = 1;
-        }
-        //system("cls");
-        //r.DiChuyen(Huong);
-        r.Ve();
-        Sleep(300);
+    cout<<"--------------- CHAO MUNG BAN DEN VOI GAME RAN SAN MOI CUA CHUNG TOI ---------------\n\n";
+    while(1)
+    {
+        int chedo;
+    cout<<"****** Hay nhap che do ban muon choi ******\n\n";
+    cout<<"-Nhap 1 de mo che do choi co dien"<<endl;
+    cout<<"-Nhap 2 de mo che do choi tu do"<<endl;
+    cout<<"-Nhap 3 de thoat khoi tro choi\n"<<endl;
+    cin>>chedo;
+    while(chedo!=1&&chedo!=2&&chedo!=3)
+    {
+        cout<<"Che do da nhap khong hop le, nhap lai: ";
+        cin>>chedo;
     }
-
-    return 0;
+    if(chedo==3)
+    {
+        cout<<"\n--------------- HEN GAP LAI BAN ---------------";
+        return 0;
+    }
+    int mucdo;
+    cout<<"****** Hay nhap muc do choi ban muon ******\n\n";
+    cout<<"   Chung toi co 3 muc do kho:"<<endl;
+    cout<<"-Nhap 1 de choi muc DE"<<endl<<"-Nhap 2 choi muc TRUNG BINH"<<endl<<"-Nhap 3 de choi muc KHO"<<endl;
+    cin>>mucdo;
+    while(mucdo!=1&&mucdo!=2&&mucdo!=3)
+    {
+        cout<<"Muc do da nhap khong hop le, nhap lai: ";
+        cin>>mucdo;
+    }
+    if(chedo==1)
+    {
+        if(mucdo==1) mucdo=200;
+    if(mucdo==2) mucdo=100;
+    if(mucdo==3) mucdo=60;
+            system("cls");
+            Gameplay1(mucdo);
+            int c;
+            gotoxy(tuongtrai,tuongduoi+2);
+            cout<<"Nhap 0 de quay ve menu hoac so khac de thoat: ";
+            cin>>c;
+            cout<<endl;
+            if(c!=0)
+            {
+                cout<<"\n--------------- HEN GAP LAI BAN ---------------";
+        return 0;
+            }
+    }
+    if(chedo==2)
+    {
+        if(mucdo==1) mucdo=200;
+    if(mucdo==2) mucdo=100;
+    if(mucdo==3) mucdo=40;
+        system("cls");
+            Gameplay2(mucdo);
+            int c;
+            gotoxy(tuongtrai,tuongduoi+2);
+            cout<<"Nhap 0 de quay ve menu hoac so khac de thoat: ";
+            cin>>c;
+            cout<<endl;
+            if(c!=0)
+            {
+                cout<<"\n--------------- HEN GAP LAI BAN ---------------";
+        return 0;
+            }
+    }
+    }
 }
 
 void gotoxy( int column, int line )
@@ -125,4 +156,20 @@ void gotoxy( int column, int line )
     coord
     );
   }
-
+bool Game_Over1(CONRAN r)
+{
+    for(int i=1;i<r.DoDai;i++)
+    {
+        if(r.A[0]==r.A[i]) return true;
+    }
+    if(r.A[0].x==tuongtrai||r.A[0].x==tuongphai||r.A[0].y==tuongtren||r.A[0].y==tuongduoi) return true;
+    return false;
+}
+bool Game_Over2(CONRAN r)
+{
+    for(int i=1;i<r.DoDai;i++)
+    {
+        if(r.A[0]==r.A[i]) return true;
+    }
+    return false;
+}
