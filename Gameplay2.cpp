@@ -1,7 +1,14 @@
 void Gameplay2(int mucdo)
 {
+    int DIEM=0;
+    gotoxy(tuongtrai+24,tuongtren-2);
+    cout<<"DIEM CUA BAN: ";
+    gotoxy(tuongtrai+38,tuongtren-2);
+    cout<<DIEM;
     CONRAN r;
     QUA qua;
+    int x= tuongtrai+9;
+    int y=15;
     int Huong = 0;
     char t;
     Ve_Tuong();
@@ -10,7 +17,7 @@ void Gameplay2(int mucdo)
   while (1){
         r.XoaCu();
         r.Ve();
-        if(Game_Over1(r))
+        if(r.Game_Over2())
         {
             gotoxy(tuongtrai+25,tuongduoi-10);
             cout<<"BAN DA CHET";
@@ -25,6 +32,8 @@ void Gameplay2(int mucdo)
         }
         AnQua(qua,r,DIEM);
         r.DiChuyen(Huong);
+        RanXuyenTuong(r);
         Sleep(mucdo);
     }
 }
+
