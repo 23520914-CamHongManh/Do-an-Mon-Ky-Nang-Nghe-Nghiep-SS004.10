@@ -1,5 +1,10 @@
 void Gameplay2(int mucdo)
 {
+    int DIEM=0;
+    gotoxy(tuongtrai+24,tuongtren-2);
+    cout<<"DIEM CUA BAN: ";
+    gotoxy(tuongtrai+38,tuongtren-2);
+    cout<<DIEM;
     CONRAN r;
     QUA qua;
     int Huong = 0;
@@ -25,6 +30,7 @@ void Gameplay2(int mucdo)
         }
         AnQua(qua,r,DIEM);
         r.DiChuyen(Huong);
+        RanXuyenTuong(r);
         Sleep(mucdo);
     }
 }
