@@ -69,23 +69,6 @@ public:
         gotoxy(A[DoDai].x,A[DoDai].y);
         cout<<" ";
     }
-
-    bool Game_Over2()
-    {
-    for( int i=1; i < DoDai ; i++)
-    {
-        if(( A[0].x== A[i].x)&& (A[0].y == A[i].y))
-            return true;
-    }
-    return false;
-
-    }
-    bool Game_Over1()
-    {   if(A[0].x==tuongtrai ||A[0].x== tuongphai ||A[0].y==tuongtren ||A[0].y==tuongduoi)
-        {return true;}
-
-     return false;
-    }
 };
 void Ve_Tuong();
 bool operator==(Point A,Point B);
@@ -126,4 +109,20 @@ void gotoxy( int column, int line )
     coord
     );
   }
-
+bool Game_Over1(CONRAN r)
+{
+    for(int i=1;i<r.DoDai;i++)
+    {
+        if(r.A[0]==r.A[i]) return true;
+    }
+    if(r.A[0].x==tuongtrai||r.A[0].x==tuongphai||r.A[0].y==tuongtren||r.A[0].y==tuongduoi) return true;
+    return false;
+}
+bool Game_Over2(CONRAN r)
+{
+    for(int i=1;i<r.DoDai;i++)
+    {
+        if(r.A[0]==r.A[i]) return true;
+    }
+    return false;
+}
