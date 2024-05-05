@@ -92,6 +92,7 @@ bool operator==(Point A,Point B);
 bool KiemTraQuaTrungThan(QUA qua, CONRAN r);
 void TaoQua(QUA &qua,CONRAN r) ;
 void AnQua(QUA &qua,CONRAN &r,int &Diem);
+void RanXuyenTuong(CONRAN &r);
 int main()
 {
     CONRAN r;
