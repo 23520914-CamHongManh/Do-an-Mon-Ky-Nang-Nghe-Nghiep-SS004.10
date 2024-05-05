@@ -1,5 +1,10 @@
 void Gameplay1(int mucdo)
 {
+    int DIEM=0;
+    gotoxy(tuongtrai+24,tuongtren-2);
+    cout<<"DIEM CUA BAN: ";
+    gotoxy(tuongtrai+38,tuongtren-2);
+    cout<<DIEM;
     CONRAN r;
     QUA qua;
     int Huong = 0;
