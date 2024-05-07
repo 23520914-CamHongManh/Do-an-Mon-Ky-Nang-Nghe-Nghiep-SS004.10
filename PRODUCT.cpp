@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <cstdlib>
 #include <conio.h>
+#include <time.h>
 #include <string.h>
 #define tuongtrai 10
 #define tuongphai 70
@@ -9,9 +10,11 @@
 #define tuongduoi 25
 using namespace std;
 void gotoxy( int column, int line );
+
 typedef struct Point{
     int x,y;
 }Point;
+
 class QUA{
     public:
     struct Point A;
@@ -25,10 +28,13 @@ class QUA{
             cout<<"#";
         }
 };
+
 class CONRAN{
 public:
+
     struct Point A[100];
     int DoDai;
+
     CONRAN(){
         DoDai = 4;
         for(int i=0;i<DoDai-1;i++)
@@ -37,6 +43,7 @@ public:
             A[i].y=15;
         }
     }
+
     void Ve(){
         for (int i = 0; i < DoDai; i++){
             if(i==0)
@@ -50,6 +57,7 @@ public:
             }
         }
     }
+
     void DiChuyen(int Huong){
         for (int i = DoDai; i>0;i--)
             A[i] = A[i-1];
@@ -65,6 +73,7 @@ public:
             A[0].y--; break;
         }
     }
+    
     void XoaCu()
     {
         gotoxy(A[DoDai].x,A[DoDai].y);
@@ -118,6 +127,8 @@ int main()
     if(mucdo==2) mucdo=100;
     if(mucdo==3) mucdo=60;
             system("cls");
+            time_t t;
+            srand((unsigned) time(&t));
             Gameplay1(mucdo);
             int c;
             gotoxy(tuongtrai,tuongduoi+2);
@@ -136,6 +147,8 @@ int main()
     if(mucdo==2) mucdo=100;
     if(mucdo==3) mucdo=40;
         system("cls");
+            time_t t;
+            srand((unsigned) time(&t));
             Gameplay2(mucdo);
             int c;
             gotoxy(tuongtrai,tuongduoi+2);
